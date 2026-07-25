@@ -1,24 +1,26 @@
 # AI Image Detection Experiment
 
-Static browser quiz using 16 original images and previously recorded TruthScan classifications.
+A static browser-based quiz that challenges users to classify 16 original images as **Real**, **Digitally Edited**, or **AI Generated**, then compare their answers with previously recorded TruthScan AI Image Detector classifications.
 
-## Run locally
+## Live Demo
 
-Open `index.html` directly in a browser, or run a local static server:
+https://ai-image-detection-experiment.netlify.app/
 
-```bash
-python -m http.server 8000
+## Local Usage
+
+Clone or download this repository and open `index.html` in a modern web browser.
+
+## Project Structure
+
+```
+index.html      # Page structure
+styles.css      # Responsive styles
+app.js          # Quiz logic and dataset
+assets/         # Original image files
 ```
 
-Then open `http://localhost:8000`.
+## Notes
 
-## Project structure
-
-- `index.html` — page structure
-- `styles.css` — responsive design
-- `app.js` — quiz data and logic
-- `assets/` — the 16 original image files
-
-## Important
-
-The included TruthScan results are comparison benchmarks, not verified ground truth. Replacing, recompressing, cropping, or upscaling the images could change detector output, so the original files are retained unchanged.
+- The quiz uses previously recorded classifications produced by TruthScan AI Image Detector.
+- These classifications are provided as comparison benchmarks and should not be considered verified ground truth.
+- The original image files are included unchanged. Recompressing, resizing, cropping, or otherwise modifying them may produce different AI detector results.
