@@ -53,7 +53,7 @@ const items = [
     image: 'assets/image_08.jpg',
     classification: 'AI Generated',
     confidence: 'High',
-    probability: 91,
+    probability: 97,
   },
   {
     id: 9,
