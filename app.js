@@ -4,14 +4,14 @@ const items = [
     image: 'assets/image_01.jpg',
     classification: 'Real',
     confidence: 'High',
-    probability: 11,
+    probability: 3,
   },
   {
     id: 2,
     image: 'assets/image_02.jpg',
-    classification: 'AI Generated',
-    confidence: 'Low',
-    probability: 54,
+    classification: 'Digitally Edited',
+    confidence: 'Medium',
+    probability: 27,
   },
   {
     id: 3,
@@ -58,9 +58,9 @@ const items = [
   {
     id: 9,
     image: 'assets/image_09.jpg',
-    classification: 'Digitally Edited',
+    classification: 'AI Generated',
     confidence: 'High',
-    probability: 3,
+    probability: 88,
   },
   {
     id: 10,
@@ -95,7 +95,7 @@ const items = [
     image: 'assets/image_14.jpg',
     classification: 'Digitally Edited',
     confidence: 'High',
-    probability: 3,
+    probability: 8,
   },
   {
     id: 15,
@@ -107,9 +107,9 @@ const items = [
   {
     id: 16,
     image: 'assets/image_16.jpg',
-    classification: 'Real',
-    confidence: 'Medium',
-    probability: 21,
+    classification: 'Digitally Edited',
+    confidence: 'High',
+    probability: 3,
   },
 ];
 let index = 0;
