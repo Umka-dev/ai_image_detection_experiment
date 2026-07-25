@@ -1,83 +1,122 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Classify 16 images and compare your judgment with TruthScan AI Image Detector results.">
-  <title>AI Image Detection Experiment</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#">AI Image Detection Experiment</a>
-    <nav aria-label="External links">
-      <a href="https://truthscan.com/ai-image-detector" target="_blank" rel="noopener noreferrer">TruthScan ↗</a>
-      <a href="https://github.com/Umka-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Classify 16 images and compare your judgment with TruthScan AI Image Detector results."
+    />
+    <title>AI Image Detection Experiment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">AI Image Detection Experiment</a>
+      <nav aria-label="External links">
+        <a
+          href="https://truthscan.com/ai-image-detector"
+          target="_blank"
+          rel="noopener noreferrer"
+          >TruthScan ↗</a
+        >
+        <a
+          href="https://github.com/Umka-dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub ↗</a
+        >
+      </nav>
+    </header>
 
-  <main class="shell">
-    <section id="start" class="panel hero">
-      <div class="eyebrow">Independent experiment</div>
-      <h1>Can You Beat an AI Image Detector?</h1>
-      <p class="lead">Classify 16 original images as <strong>Real</strong>, <strong>Digitally Edited</strong>, or <strong>AI Generated</strong>. At the end, compare your judgment with TruthScan's results.</p>
-      <div class="notice">
-        <strong>Reality check:</strong> TruthScan's output is used as a comparison benchmark, not verified ground truth. AI detectors can be wrong.
-      </div>
-      <button id="startBtn" class="primary">Start the challenge</button>
-    </section>
+    <main class="shell">
+      <section id="start" class="panel hero">
+        <div class="eyebrow">Independent experiment</div>
+        <h1>Can You Beat an AI Image Detector?</h1>
+        <p class="lead">
+          Classify 16 original images as <strong>Real</strong>,
+          <strong>Digitally Edited</strong>, or <strong>AI Generated</strong>.
+          At the end, compare your judgment with TruthScan's results.
+        </p>
+        <div class="notice">
+          <strong>Reality check:</strong> TruthScan's output is used as a
+          comparison benchmark, not verified ground truth. AI detectors can be
+          wrong.
+        </div>
+        <button id="startBtn" class="primary">Start the challenge</button>
+      </section>
 
-    <section id="quiz" class="panel hidden" aria-live="polite">
-      <div class="topline">
-        <span id="counter"></span>
-        <span id="answered"></span>
-      </div>
-      <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+      <section id="quiz" class="panel hidden" aria-live="polite">
+        <div class="topline">
+          <span id="counter"></span>
+          <span id="answered"></span>
+        </div>
+        <div class="progress" aria-hidden="true">
+          <div id="progressBar"></div>
+        </div>
 
-      <div class="image-frame">
-        <img id="quizImage" alt="Image to classify">
-      </div>
+        <div class="image-frame">
+          <img id="quizImage" alt="Image to classify" />
+        </div>
 
-      <h2>What is your verdict?</h2>
-      <div id="options" class="options">
-        <button data-answer="Real">Real <kbd>1</kbd></button>
-        <button data-answer="Digitally Edited">Digitally Edited <kbd>2</kbd></button>
-        <button data-answer="AI Generated">AI Generated <kbd>3</kbd></button>
-      </div>
+        <h2>What is your verdict?</h2>
+        <div id="options" class="options">
+          <button data-answer="Real">Real</button>
+          <button data-answer="Digitally Edited">Digitally Edited</button>
+          <button data-answer="AI Generated">AI Generated</button>
+        </div>
 
-      <div class="nav">
-        <button id="prevBtn" class="secondary">Back</button>
-        <button id="nextBtn" class="primary" disabled>Next</button>
-      </div>
-    </section>
+        <div class="nav">
+          <button id="prevBtn" class="secondary">Back</button>
+          <button id="nextBtn" class="primary" disabled>Next</button>
+        </div>
+      </section>
 
-    <section id="results" class="panel hidden">
-      <div class="eyebrow">Your result</div>
-      <h1 id="scoreHeading"></h1>
-      <p id="scoreText" class="lead"></p>
-      <div id="resultGrid" class="result-grid"></div>
-      <div class="notice">
-        A match means your answer matched TruthScan's classification. It does not prove the actual origin of the image.
-      </div>
-      <button id="restartBtn" class="secondary">Try again</button>
-    </section>
-  </main>
+      <section id="results" class="panel hidden">
+        <div class="eyebrow">Your result</div>
+        <h1 id="scoreHeading"></h1>
+        <p id="scoreText" class="lead"></p>
+        <div id="resultGrid" class="result-grid"></div>
+        <div class="notice">
+          A match means your answer matched TruthScan's classification. It does
+          not prove the actual origin of the image.
+        </div>
+        <button id="restartBtn" class="secondary">Try again</button>
+      </section>
+    </main>
 
-  <footer class="site-footer">
-    <section>
-      <h2>About this experiment</h2>
-      <p>This independent media-literacy experiment compares human judgment with probabilistic output from an AI image detector.</p>
-    </section>
-    <section>
-      <h2>Detection service</h2>
-      <p><a href="https://truthscan.com/ai-image-detector" target="_blank" rel="noopener noreferrer">TruthScan AI Image Detector ↗</a></p>
-    </section>
-    <section>
-      <h2>Source code</h2>
-      <p><a href="https://github.com/Umka-dev" target="_blank" rel="noopener noreferrer">GitHub — Umka-dev ↗</a></p>
-    </section>
-  </footer>
+    <footer class="site-footer">
+      <section>
+        <h2>About this experiment</h2>
+        <p>
+          This independent media-literacy experiment compares human judgment
+          with probabilistic output from an AI image detector.
+        </p>
+      </section>
+      <section>
+        <h2>Detection service</h2>
+        <p>
+          <a
+            href="https://truthscan.com/ai-image-detector"
+            target="_blank"
+            rel="noopener noreferrer"
+            >TruthScan AI Image Detector ↗</a
+          >
+        </p>
+      </section>
+      <section>
+        <h2>Source code</h2>
+        <p>
+          <a
+            href="https://github.com/Umka-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub — Umka-dev ↗</a
+          >
+        </p>
+      </section>
+    </footer>
 
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
